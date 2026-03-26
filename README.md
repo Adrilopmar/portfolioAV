@@ -1,72 +1,41 @@
-<p align="center">
-    <img src="https://github.com/octobercms/october/blob/develop/themes/demo/assets/images/favicon.png?raw=true" alt="October" width="25%" height="25%" />
-</p>
+# Portfolio Cinematográfico - Dirección y Producción AV 🎬
 
-[October](https://octobercms.com) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again. It was born out of frustration with existing systems. We feel building websites has become a convoluted and confusing process that leaves developers unsatisfied. We want to turn you around to the simpler side and get back to basics.
+Un portfolio web de "alta costura" diseñado específicamente para perfiles de Project Management Audiovisual, Dirección y Producción. Destaca por su enfoque editorial, minimalismo y transiciones fluidas (*smooth as butter*), poniendo el foco absoluto en la calidad de las piezas audiovisuales y el contexto técnico de cada proyecto.
 
-October's mission is to show the world that web development is not rocket science.
+Desarrollado sobre la arquitectura de **October CMS**.
 
-[![Build Status](https://github.com/octobercms/library/actions/workflows/tests.yml/badge.svg)](https://octobercms.com/)
-[![Downloads](https://img.shields.io/packagist/dt/october/rain)](https://docs.octobercms.com/)
-[![Version](https://img.shields.io/packagist/v/october/october)](https://octobercms.com/changelog)
-[![License](https://poser.pugx.org/october/october/license.svg)](./LICENSE.md)
+## ✨ Características Principales
 
-> *Please note*: October CMS is open source and every new account includes a complimentary license for the first year. After that, a license is required to continue receiving updates and access the Marketplace ecosystem.
+* 🎥 **Hero Dinámico (Scroll-driven):** El vídeo de cabecera reacciona al scroll del usuario, aplicando un efecto de escala (zoom-out) y desenfoque (blur) calculados matemáticamente a través de la tarjeta gráfica (GPU) para evitar tirones.
+* 🃏 **Galería 3D (Featured Projects):** Tarjetas interactivas con efecto *flip* en espacio 3D real. Muestran el plano final en el anverso y los detalles técnicos/descripción en el reverso. Optimizadas para interacción táctil en dispositivos móviles.
+* 🎬 **Acordeón Cinematográfico:** Un índice de proyectos estilo "Call Sheet" o documento técnico. Al hacer clic, la fila se expande fluidamente utilizando las últimas especificaciones de CSS Grid (`grid-template-rows`).
+* ⚡ **Rendimiento Inteligente:** Los vídeos del acordeón solo se reproducen cuando su panel está abierto, y se pausan automáticamente al cerrarlo, ahorrando batería y datos al usuario.
+* 📱 **100% Responsive:** Diseño adaptable ("Mobile First" considerado) con uso de Media Queries y etiqueta `viewport` para asegurar una legibilidad perfecta de la tipografía técnica en cualquier pantalla.
 
-## Installing October
+## 🛠️ Stack Tecnológico
 
-Instructions on how to install October can be found at the [installation guide](https://docs.octobercms.com/3.x/setup/installation.html).
+* **Plataforma:** October CMS (Plantillas con sintaxis Twig)
+* **Estructura:** HTML5 semántico
+* **Estilos:** SCSS / CSS3 (Animaciones, CSS Grid, 3D Transforms)
+* **Interactividad:** Vanilla JavaScript (ES6)
+    * Uso de `IntersectionObserver` para revelar elementos elegantemente al hacer scroll.
+    * Cálculos en tiempo real basados en `window.scrollY`.
+    * Manipulación dinámica del DOM (`classList`).
 
-### Quick Start Installation
+## 📁 Archivos Clave
 
-If you have composer installed, run this in your terminal to install October CMS from command line. This will place the files in a directory named **myoctober**.
+El núcleo de la personalización visual e interactiva reside en estos tres archivos dentro del tema de October CMS:
 
-    composer create-project october/october myoctober
+* `home.htm`: Contiene el marcado semántico y las etiquetas de Twig (`{{ '...' | theme }}`) para la inyección de *assets*.
+* `app.scss`: Centraliza todo el diseño, la lógica 3D de las tarjetas, el diseño editorial del acordeón y las Media Queries.
+* `main.js`: Controla las matemáticas del scroll del Hero, la observación de las tarjetas de la galería y la lógica de *Play/Pause* automático del acordeón cinematográfico.
 
-If you plan on using a database, run this command inside the application directory.
+## 🚀 Instalación y Uso
 
-    php artisan october:install
+1. Copia los archivos dentro de la carpeta de tu tema activo en October CMS (habitualmente en `/themes/tu-tema/`).
+2. Asegúrate de compilar el archivo `app.scss` a un archivo `.css` normal para que el navegador pueda leerlo (puedes usar el compilador integrado de October CMS o herramientas externas como Webpack/Gulp).
+3. Verifica que tu archivo `layout/default.htm` incluye la etiqueta `<meta name="viewport" content="width=device-width, initial-scale=1.0">` en el `<head>` para garantizar el diseño responsive.
+4. Sube tus vídeos e imágenes a la carpeta `/assets/` de tu tema y actualiza las rutas en el HTML.
 
-## Learning October
-
-The best place to learn October CMS is by [reading the documentation](https://docs.octobercms.com) or [following some tutorials](https://octobercms.com/support/articles/tutorials).
-
-You may also watch this [introductory video](https://www.youtube.com/watch?v=yLZTOeOS7wI). Make sure to check out our [official YouTube channel](https://www.youtube.com/c/OctoberCMSOfficial). There is also the excellent video series by [Watch & Learn](https://watch-learn.com/series/making-websites-with-october-cms).
-
-For code examples of building with October CMS, visit the [RainLab Plugin Suite](https://github.com/rainlab) or the [October Demos Repo](https://github.com/octoberdemos).
-
-## Coding Standards
-
-Please follow the following guides and code standards:
-
-* [PSR 4 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)
-* [PSR 2 Coding Style Guide](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
-* [PSR 1 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
-
-## Security Vulnerabilities
-
-Please review [our security policy](https://github.com/octobercms/october/security/policy) on how to report security vulnerabilities.
-
-## Development Team
-
-October CMS was founded in 2014 by Alexey Bobkov and Sam Georges. Today it is supported by a worldwide network of [partners](https://octobercms.com/partners) and contributors.
-
-## Foundation library
-
-The CMS uses [Laravel](https://laravel.com) as a foundation PHP framework.
-
-## Contact
-
-For announcements and updates:
-
-* [Contact Us Page](https://octobercms.com/contact)
-* [Follow us on Twitter](https://twitter.com/octobercms)
-* [Like us on Facebook](https://facebook.com/octobercms)
-
-To chat or hang out:
-
-* [Join us on Discord](https://discord.gg/gEKgwSZ)
-
-## License
-
-The October CMS platform is licensed software, see [End User License Agreement](./LICENSE.md) (EULA) for more details.
+---
+*Diseñado con el foco puesto en la narrativa visual y el proceso de producción.*
