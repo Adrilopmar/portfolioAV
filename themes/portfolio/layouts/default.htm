@@ -1,0 +1,40 @@
+description = "Default layout"
+description = "Anna Cea Royes Producer Manager"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ this.page.meta_title ?: placeholder('pageTitle') }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <link href="{{ ['assets/scss/app.scss'] |theme }}" rel="stylesheet">
+        <!-- Compressed CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
+    </head>
+    <body class="{{ 'page-'~this.page.id }}">
+
+        {% partial 'site/navbar' %}
+        <!-- Header -->
+        <header id="layout-header" class="grid-container">
+            <div class="text-3xl font-bold">
+            </div>
+        </header>
+
+
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+
+        </footer>
+        <!-- Compressed JavaScript -->
+        {% framework extras %}
+    </body>
+</html>
+<script src="{{['assets/js/main.js'] |theme }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous"></script>
