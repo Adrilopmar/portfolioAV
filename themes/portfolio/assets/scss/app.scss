@@ -1,6 +1,15 @@
+*{
+    font-family: "Inter",Helvetica,Roboto,Arial,sans-serif;
+}
+// p,ul,li{
+//     font-family: "Syne", sans-serif;
+// }
 html {
     margin: 0;
     background-color: #000; /* Fondo negro para que destaque al encogerse el vídeo */
+}
+body{
+    margin: 0;
 }
 .clr-blck {
     color: #000;
@@ -115,8 +124,15 @@ html {
     padding: 60px 5%; 
     // border-radius: 20px 20px 0 0;
     @media (max-width: 768px){
-        padding: 120px 10%;
+        padding: 40px 10%;
         // border-radius: 40px 40px 0 0;
+    }
+    .introduction{
+        max-width: 1200px;
+        line-height: 1.4;
+        margin: 0 auto 1.5em auto;
+        font-size: 1.3rem;
+        font-weight: 200;
     }
 }
 .project-grid {
@@ -175,7 +191,11 @@ html {
         color: white;
         padding: 1em;
         margin: 0;
-        background: rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
     }
 }
 .project-front img {
@@ -215,11 +235,23 @@ html {
     font-weight: 600;
 }
 
-.project-back p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.8;
+
+.project-back{
+    p, ul{
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.4;
+        font-weight: 300;
+        opacity: 0.8;
+        color: rgb(255, 255, 255, 0.8);
+    }
+    ul{
+        margin-top: 1em;
+        text-align: start;
+        li{
+            margin-bottom: 0.5em;
+        }
+    }
 }
 
 /* --- MORE PROJECTS (ACORDEÓN CINEMATOGRÁFICO) --- */
@@ -244,19 +276,28 @@ html {
 /* La Cabecera (El Menú) */
 .accordion-header {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
     padding: 40px 0;
     cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.accordion-header h3 {
-    margin: 0;
-    font-size: 3.5rem; /* Letra muy grande y editorial */
-    font-weight: 300;
-    letter-spacing: -1px;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Movimiento suave */
+    transition: opacity 0.5s ease;
+    &:hover h3 {
+        transform: translateX(20px);
+    }
+    @media (max-width: 768px) {
+        flex-direction: column;
+        &:hover h3 {
+            transform:none;
+        }
+    }
+    h3 {
+        margin: 0;
+        font-size: 3.5rem; /* Letra muy grande y editorial */
+        font-weight: 100;
+        letter-spacing: -1px;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Movimiento suave */
+    }
 }
 
 .accordion-header .role {
@@ -268,15 +309,13 @@ html {
 }
 
 /* Efecto hover en escritorio: el título da un pasito a la derecha */
-.accordion-header:hover h3 {
-    transform: translateX(20px);
-}
+
 
 /* --- EL TRUCO DEL ACORDEÓN SMOOTH --- */
 .accordion-content {
     display: grid;
     grid-template-rows: 0fr; /* Empieza colapsado con altura 0 */
-    transition: grid-template-rows 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: grid-template-rows 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-inner {
@@ -334,7 +373,11 @@ html {
 
 .accordion-item.is-active .accordion-header h3 {
     transform: translateX(20px);
-    font-weight: 500; /* Se vuelve un poco más grueso para destacar */
+    font-weight: 300; /* Se vuelve un poco más grueso para destacar */
+    @media (max-width: 768px) {
+        transform: none;
+
+     }
 }
 
 .accordion-item.is-active .accordion-header .role {
@@ -354,5 +397,116 @@ html {
     
     .video-container {
         flex: 1;
+    }
+}
+/* --- FOOTER PREMIUM --- */
+.site-footer {
+    position: relative;
+    z-index: 2;
+    background-color: #050505; 
+    color: #ffffff;
+    padding: 50px 10% 50px 10%; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Aseguramos la fuente premium */
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 200px; 
+}
+
+/* Zona Central (CTA) */
+.footer-cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* El Texto Gigante (Correo) */
+.cta-main-text {
+    display: inline-block;
+    font-size: 4rem; /* Aún más grande, tamaño editorial */
+    font-weight: 300; /* Helvetica Light */
+    letter-spacing: -2px; 
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.4s ease;
+    margin-bottom: 30px; /* Espacio antes de los enlaces de WhatsApp/LinkedIn */
+}
+
+/* Enlaces Rápidos (WhatsApp / LinkedIn) */
+.cta-quick-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+   
+}
+
+.cta-quick-links a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    opacity: 0.7;
+    transition: width 0.3s ease;
+    &:hover{
+        opacity: 1;
+        transition: width 0.3s ease;
+    }
+}
+
+/* Efecto de línea debajo del texto al hacer hover (muy de estudio boutique) */
+.cta-quick-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.cta-quick-links a:hover::after {
+    width: 100%;
+}
+
+.cta-quick-links .divider {
+    opacity: 0.3;
+}
+
+/* Barra Inferior (Textos pequeños técnicos) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.3;
+    letter-spacing: 0.5px;
+}
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 0px 5% 40px 5%;
+    }
+
+    .cta-main-text {
+        font-size: 3.5rem; /* Ajuste para que quepa en la pantalla del móvil */
+        letter-spacing: -1px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
     }
 }

@@ -9,8 +9,11 @@ description = "Anna Cea Royes Producer Manager"
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <link href="{{ ['assets/scss/app.scss'] |theme }}" rel="stylesheet">
-        <!-- Compressed CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
     </head>
     <body class="{{ 'page-'~this.page.id }}">
 
@@ -33,8 +36,8 @@ description = "Anna Cea Royes Producer Manager"
 
         </footer>
         <!-- Compressed JavaScript -->
-        {% framework extras %}
+        {# {% framework extras %} #}
     </body>
 </html>
 <script src="{{['assets/js/main.js'] |theme }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+{# <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous"></script> #}
