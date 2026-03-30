@@ -97,4 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    const videoRole = document.querySelectorAll(".video-role");
+    
+    videoRole.forEach( video => {
+
+        video.parentElement.addEventListener("mouseenter", () => {
+            video.play();
+        })
+
+        video.parentElement.addEventListener("mouseleave", () => {
+            video.pause();
+        })
+        
+
+    })
 });
