@@ -23,13 +23,13 @@ body{
 }
 
 .hero {
-    position: fixed; /* Lo anclamos al fondo de la pantalla */
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    z-index: 1; /* Se queda en la capa inferior */
+    z-index: 1; 
     transform-origin: center center;
     will-change:
         transform, filter; /* Optimiza el rendimiento para que no dé tirones */
@@ -62,14 +62,14 @@ body{
 }
 
 .hero.shrink {
-    height: 60vh; /* Un poco más de altura para que el zoom respire mejor */
+    height: 60vh;
 }
 
 .hero.shrink .hero-video {
     transform: translate(-50%, -50%) scale(0.8); /* Efecto Zoom Out */
     filter: blur(8px); /* Efecto Blur al final */
-    opacity: 0.7; /* Opcional: lo oscurece un poco para dar protagonismo a lo que sigue */
-    border-radius: 20px; /* Opcional: le da un toque muy elegante al encogerse */
+    opacity: 0.7;
+    border-radius: 20px;
 }
 
 .hero-title {
@@ -80,12 +80,11 @@ body{
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    /* La transición la manejaremos con JS, así que aquí la quitamos */
 }
 .hero.shrink .hero-title {
     transform: translate(-50%, -150%);
     font-size: 0.8em;
-    opacity: 0; /* Hacemos que el título desaparezca elegantemente al hacer scroll */
+    opacity: 0;
 }
 
 /* --- NAVBAR --- */
@@ -97,13 +96,10 @@ body{
     padding: 25px 40px;
     z-index: 10;
     color: white;
-    box-sizing: border-box; /* Evita que el padding sume ancho extra */
-    
-    /* La magia de Flexbox para separar logo y menú */
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
     transition: background 0.3s ease;
@@ -122,13 +118,14 @@ body{
 /* Estilo de la Lista de Enlaces */
 .nav-links {
     display: flex;
-    gap: 30px; /* Separación perfecta entre los enlaces */
+    gap: 30px; 
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li a {
+    position: relative;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
@@ -136,10 +133,25 @@ body{
     letter-spacing: 1.5px;
     opacity: 0.8;
     transition: opacity 0.3s ease;
+    padding-bottom: 2px;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background-color: #ffffff;
+        transition: width 0.3s ease;
+    }
 }
 
 .nav-links li a:hover {
-    opacity: 1; /* Se ilumina al pasar el ratón */
+    opacity: 1;
+    &::after{
+        width: 100%;
+        transition: width 0.3s ease;
+    }
 }
 
 /* --- RESPONSIVE (MÓVIL) --- */
