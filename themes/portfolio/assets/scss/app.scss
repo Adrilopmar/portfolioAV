@@ -105,7 +105,6 @@ body{
     transition: background 0.3s ease;
 }
 
-/* Estilo del Logo */
 .navbar .logo a {
     color: white;
     text-decoration: none;
@@ -115,7 +114,6 @@ body{
     letter-spacing: 2px;
 }
 
-/* Estilo de la Lista de Enlaces */
 .nav-links {
     display: flex;
     gap: 30px; 
@@ -161,7 +159,7 @@ body{
     }
     
     .nav-links {
-        gap: 15px; /* Juntamos un poco los enlaces en pantallas pequeñas */
+        gap: 15px;
     }
     
     .nav-links li a {
@@ -215,11 +213,10 @@ body{
 .project-inner {
     position: relative;
     width: 100%;
-    /* Usamos aspect-ratio para mantener la proporción sin importar la pantalla. 
-       Cámbialo a 1/1 para cuadradas, 16/9 para rectangulares... */
+    /* Usamos aspect-ratio para mantener la proporción sin importar la pantalla. 1/1 para cuadradas, 16/9 para rectangulos */
     aspect-ratio: 3 / 4; 
     text-align: center;
-    transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1); /* Giro más natural */
+    transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1); /* Giro natural */
     transform-style: preserve-3d; /* Permite que los hijos tengan 3D */
 }
 .project:hover .project-inner,
@@ -229,8 +226,8 @@ body{
 .project-front {
     position: relative;
     background-color: #eee;
-    transform: rotateY(0deg); /* Le decimos explícitamente cuál es su posición 3D inicial */
-    z-index: 2; /* Forzamos a que la imagen empiece siempre por encima del texto */
+    transform: rotateY(0deg); /* posición 3D inicial */
+    z-index: 2;
     .left{
         // transform:rotateX(180deg);
         transform:rotateY(180deg);
@@ -261,7 +258,7 @@ body{
 .project-front, 
 .project-back {
     position: absolute;
-    top: 0; /* Aseguramos que empiecen exactamente en el mismo sitio */
+    top: 0; 
     left: 0;
     width: 100%;
     height: 100%;
@@ -273,7 +270,7 @@ body{
 .project-back {
     background-color: #111; 
     color: white;
-    transform: rotateY(180deg); /* Esta ya empieza dada la vuelta */
+    transform: rotateY(180deg); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -386,7 +383,7 @@ body{
 /* --- MORE PROJECTS (ACORDEÓN CINEMATOGRÁFICO) --- */
 .more-projects {
     padding: 120px 10%;
-    background-color: #0c0c0c; /* Un negro casi puro, muy elegante */
+    background-color: #0c0c0c;
     color: #ffffff;
     z-index: 2;
     position: relative;
@@ -399,7 +396,7 @@ body{
 
 /* La Fila del Proyecto */
 .accordion-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Línea divisoria muy fina */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* La Cabecera (El Menú) */
@@ -422,15 +419,15 @@ body{
     }
     h3 {
         margin: 0;
-        font-size: 3.5rem; /* Letra muy grande y editorial */
+        font-size: 3.5rem; 
         font-weight: 100;
         letter-spacing: -1px;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Movimiento suave */
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
 
 .accordion-header .role {
-    font-family: monospace; /* Toque técnico */
+    font-family: monospace;
     opacity: 0.5;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -451,11 +448,10 @@ body{
     overflow: hidden; /* Oculta lo que sobresale mientras se anima */
 }
 
-/* El contenido que aparece al abrir (Vídeo a un lado, Texto al otro) */
 .content-split {
     display: flex;
     gap: 60px;
-    padding-bottom: 60px; /* Espacio para respirar por abajo */
+    padding-bottom: 60px;
     padding-top: 10px;
 }
 
@@ -497,12 +493,12 @@ body{
 
 /* --- ESTADO ACTIVO (Cuando haces clic) --- */
 .accordion-item.is-active .accordion-content {
-    grid-template-rows: 1fr; /* Magia: se expande a su tamaño real de forma fluida */
+    grid-template-rows: 1fr;
 }
 
 .accordion-item.is-active .accordion-header h3 {
     transform: translateX(20px);
-    font-weight: 300; /* Se vuelve un poco más grueso para destacar */
+    font-weight: 300; 
     @media (max-width: 768px) {
         transform: none;
 
@@ -516,11 +512,11 @@ body{
 /* --- RESPONSIVE (MÓVILES Y TABLETS) --- */
 @media (max-width: 768px) {
     .accordion-header h3 {
-        font-size: 2rem; /* Títulos más pequeños en móvil */
+        font-size: 2rem; 
     }
     
     .content-split {
-        flex-direction: column; /* Apilamos el vídeo y el texto en vertical */
+        flex-direction: column;
         gap: 30px;
     }
     
@@ -528,7 +524,7 @@ body{
         flex: 1;
     }
 }
-/* --- FOOTER PREMIUM --- */
+/* --- FOOTER --- */
 .site-footer {
     position: relative;
     z-index: 2;
@@ -536,7 +532,7 @@ body{
     color: #ffffff;
     padding: 50px 10% 50px 10%; 
     border-top: 1px solid rgba(255, 255, 255, 0.05); 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Aseguramos la fuente premium */
+    font-family: "Inter", Helvetica, Arial, sans-serif; 
 }
 
 .footer-container {
@@ -547,7 +543,6 @@ body{
     gap: 200px; 
 }
 
-/* Zona Central (CTA) */
 .footer-cta {
     text-align: center;
     display: flex;
@@ -555,16 +550,15 @@ body{
     align-items: center;
 }
 
-/* El Texto Gigante (Correo) */
 .cta-main-text {
     display: inline-block;
-    font-size: 4rem; /* Aún más grande, tamaño editorial */
-    font-weight: 300; /* Helvetica Light */
+    font-size: 4rem; 
+    font-weight: 100;
     letter-spacing: -2px; 
     color: #ffffff;
     text-decoration: none;
     transition: opacity 0.4s ease;
-    margin-bottom: 30px; /* Espacio antes de los enlaces de WhatsApp/LinkedIn */
+    margin-bottom: 30px;
 }
 
 /* Enlaces Rápidos (WhatsApp / LinkedIn) */
@@ -590,7 +584,6 @@ body{
     }
 }
 
-/* Efecto de línea debajo del texto al hacer hover (muy de estudio boutique) */
 .cta-quick-links a::after {
     content: '';
     position: absolute;
@@ -610,7 +603,6 @@ body{
     opacity: 0.3;
 }
 
-/* Barra Inferior (Textos pequeños técnicos) */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -628,7 +620,7 @@ body{
     }
 
     .cta-main-text {
-        font-size: 3.5rem; /* Ajuste para que quepa en la pantalla del móvil */
+        font-size: 3.5rem;
         letter-spacing: -1px;
     }
 
