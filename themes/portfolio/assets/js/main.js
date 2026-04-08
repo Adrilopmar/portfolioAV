@@ -112,4 +112,33 @@ document.addEventListener("DOMContentLoaded", () => {
         
 
     })
+
+    // --- LÓGICA DE LAS FLECHAS DEL CARRUSEL ---
+const filmstripWrappers = document.querySelectorAll('.filmstrip-wrapper');
+
+filmstripWrappers.forEach(wrapper => {
+    const track = wrapper.querySelector('.filmstrip-track');
+    const prevBtn = wrapper.querySelector('.prev');
+    const nextBtn = wrapper.querySelector('.next');
+
+    // Cantidad de píxeles que se moverá por cada clic. 
+    // Lo ideal es que sea un número similar al ancho de un vídeo.
+    const scrollAmount = 350; 
+
+    if (track && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ 
+                left: -scrollAmount, 
+                behavior: 'smooth' 
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ 
+                left: scrollAmount, 
+                behavior: 'smooth' 
+            });
+        });
+    }
+});
 });

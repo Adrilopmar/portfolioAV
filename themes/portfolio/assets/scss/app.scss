@@ -211,6 +211,8 @@ body{
     transform: translateY(0);
 }
 .project-inner {
+             border-radius: 10px;
+    border: 1.5px solid #111;
     position: relative;
     width: 100%;
     /* Usamos aspect-ratio para mantener la proporción sin importar la pantalla. 1/1 para cuadradas, 16/9 para rectangulos */
@@ -241,7 +243,7 @@ body{
         color: white;
         padding: 1em;
         margin: 0;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.8);
         box-sizing: border-box;
         font-size: 1rem;
         font-weight: 600;
@@ -629,5 +631,226 @@ body{
         align-items: center;
         gap: 20px;
         text-align: center;
+    }
+}
+
+/* --- VERSIÓN TEMPORAL: CUADRÍCULA EDITORIAL --- */
+.temp-editorial-grid {
+    position: relative;
+    z-index: 2;
+    padding: 100px 10%;
+    background-color: #000; /* O blanco, dependiendo de tu web */
+    color: #fff;
+}
+
+.temp-editorial-grid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.editorial-col {
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea fina arriba */
+}
+
+.col-number {
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.editorial-col h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.editorial-col p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+/* Responsive Móvil */
+@media (max-width: 768px) {
+    .temp-editorial-grid .grid-container {
+        grid-template-columns: 1fr; /* Una columna debajo de otra */
+    }
+}
+
+/* --- VERSIÓN TEMPORAL: ICONOS MINIMALISTAS --- */
+.temp-icon-grid {
+    padding: 100px 10%;
+    background-color: #ffffff; /* Fondo blanco como pediste */
+    color: #000000;
+}
+
+.temp-icon-grid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.icon-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Todo alineado a la izquierda */
+}
+
+/* La caja del icono: el borde fino que querías */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.15); /* Borde negro muy sutil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border-radius: 4px; /* Un poco de redondeo si lo quieres más amable, o 0 para cuadrado puro */
+}
+
+.icon-box svg {
+    opacity: 0.8;
+}
+
+.icon-col h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.icon-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+/* Responsive Móvil */
+@media (max-width: 768px) {
+    .temp-icon-grid .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- FILMSTRIP CAROUSEL --- */
+.filmstrip-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.filmstrip-track {
+    display: flex;
+    gap: 20px; /* Separación entre los vídeos */
+    overflow-x: auto;
+    
+    /* La magia del scroll magnético nativo */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    
+    /* Ocultar la barra de scroll para que se vea limpio */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding-bottom: 10px;
+}
+
+.filmstrip-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
+.filmstrip-item {
+    flex: 0 0 85%; /* En móvil, muestra un vídeo y el "borde" del siguiente para invitar a hacer swipe */
+    scroll-snap-align: center; /* Cuando sueltas el dedo, el vídeo se centra magnéticamente */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajuste para escritorio: que se vean más pequeños o en formato cuadrícula si prefieres */
+@media (min-width: 768px) {
+    .filmstrip-item {
+        flex: 0 0 45%; /* Muestra dos vídeos a la vez en pantallas grandes */
+        scroll-snap-align: start; /* Se alinean a la izquierda */
+    }
+}
+
+/* El texto debajo de cada miniatura */
+.filmstrip-caption {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+/* --- WRAPPER Y FLECHAS --- */
+.filmstrip-wrapper {
+    position: relative; /* Clave para que las flechas floten dentro */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.filmstrip-arrow {
+    position: absolute;
+    top: 40%; /* Centrado visual respecto a los vídeos, ajusta si hace falta */
+    transform: translateY(-50%);
+    z-index: 5;
+    
+    /* Diseño premium del botón */
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px); /* Efecto cristal */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #ffffff;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    /* Magia de la aparición sutil */
+    opacity: 0; 
+    transition: all 0.3s ease;
+}
+
+/* Posición de cada flecha */
+.filmstrip-arrow.prev { left: 10px; }
+.filmstrip-arrow.next { right: 10px; }
+
+/* Tamaño del SVG */
+.filmstrip-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Efecto al pasar el ratón por todo el carrusel: aparecen las flechas */
+.filmstrip-wrapper:hover .filmstrip-arrow {
+    opacity: 1;
+}
+
+/* Efecto al pasar el ratón por la flecha en sí: se ilumina */
+.filmstrip-arrow:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* En móvil las ocultamos porque deslizar con el dedo es mejor UX */
+@media (max-width: 768px) {
+    .filmstrip-arrow {
+        display: none;
     }
 }

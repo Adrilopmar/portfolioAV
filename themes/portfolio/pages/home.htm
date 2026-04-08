@@ -27,11 +27,11 @@ meta_description = "Portfolio Anna Cea Royes Producer Manager"
         <p>Para lograr esta cohesión, mi trabajo se articula sobre tres pilares fundamentales:</p>
     </div>
 
-<!-- <div class="project-grid">
+    <div class="project-grid">
         <div class="project">
             <div class="project-inner">
                 <div class="project-front">
-                    <img class="left" src="{{'assets/img/left.jpg'|theme}}" alt="Proyecto 1">
+                    <img class="left" src="{{'assets/img/encuadre.png'|theme}}" alt="Proyecto 1">
                     <h4>DIRECCIÓN CREATIVA</h4>
                     </div>
                 <div class="project-back">
@@ -50,7 +50,7 @@ meta_description = "Portfolio Anna Cea Royes Producer Manager"
         <div class="project">
             <div class="project-inner">
                 <div class="project-front">
-                    <img src="{{'assets/img/front.jpg'|theme}}" alt="Proyecto 2">
+                    <img src="{{'assets/img/project-manager.png'|theme}}" alt="Proyecto 2">
                     <h4>PROJECT MANAGEMENT</h4>
                 </div>
                 <div class="project-back">
@@ -69,7 +69,7 @@ meta_description = "Portfolio Anna Cea Royes Producer Manager"
         <div class="project">
             <div class="project-inner">
                 <div class="project-front">
-                    <img src="{{'assets/img/right.jpg'|theme}}" alt="Proyecto 3">
+                    <img src="{{'assets/img/camara.png'|theme}}" alt="Proyecto 3">
                     <h4>POSTPRODUCCIÓN</h4>
                 </div>
                 <div class="project-back">
@@ -84,10 +84,12 @@ meta_description = "Portfolio Anna Cea Royes Producer Manager"
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+<br>
+<br>
+<br>
 
-
-        <div class="diagonal-showcase">
+        {# <div class="diagonal-showcase">
             <div class="diagonal-item"></div>
             <div class="diagonal-item">
                 <video muted loop playsinline class="video-role">
@@ -141,9 +143,28 @@ meta_description = "Portfolio Anna Cea Royes Producer Manager"
                </div>
             </div>
              <div class="diagonal-item"></div>
-        </div>
-</section> 
+        </div> #}
 
+</section> 
+        <div class="temp-editorial-grid">
+            <div class="grid-container">
+                <div class="editorial-col">
+                    <span class="col-number">01</span>
+                    <h3>Dirección Creativa</h3>
+                    <p>Conceptualización visual, escritura de guiones técnicos y dirección de arte en set para garantizar una estética de alto nivel.</p>
+                </div>
+                <div class="editorial-col">
+                    <span class="col-number">02</span>
+                    <h3>Project Management</h3>
+                    <p>Diseño de presupuestos, órdenes de rodaje y coordinación logística para un flujo de producción eficiente y sólido.</p>
+                </div>
+                <div class="editorial-col">
+                    <span class="col-number">03</span>
+                    <h3>Postproducción</h3>
+                    <p>Montaje narrativo, corrección de color (Color Grading) y diseño sonoro para cerrar la pieza con un ritmo impecable.</p>
+                </div>
+            </div>
+        </div>
 <section class="more-projects" id="work">
     
     <div class="accordion-container">
@@ -180,16 +201,42 @@ meta_description = "Portfolio Anna Cea Royes Producer Manager"
             <div class="accordion-content">
                 <div class="content-inner">
                     <div class="content-split">
-                        <div class="video-container">
-                            <video muted loop playsinline>
-                                <source src="{{'assets/videos/file_example.mp4'|theme}}" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="text-container">
-                            <h4>Visión</h4>
-                            <p>Un cortometraje independiente donde la narrativa se apoya casi exclusivamente en el color y el montaje. Edición rítmica pensada desde la creación del guion técnico.</p>
-                            <span class="tech-specs">EQUIPO: 4 PAX  |  RODAJE: 1 DÍAS  |  ENTREGABLES: 2 PIEZAS</span>
-                        </div>
+                        <div class="filmstrip-container">
+<div class="filmstrip-wrapper">
+    
+    <button class="filmstrip-arrow prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+
+    <div class="filmstrip-track">
+        
+        <div class="filmstrip-item">
+            <div class="fake-poster" onclick="loadYoutube(this, 'ID_1')">
+                <img src="{{ 'assets/images/poster-main.jpg'|theme }}" alt="Spot">
+            </div>
+        </div>
+
+        <div class="filmstrip-item">
+            <div class="fake-poster" onclick="loadYoutube(this, 'ID_2')">
+                <img src="{{ 'assets/images/poster-social.jpg'|theme }}" alt="Social">
+            </div>
+        </div>
+
+        <div class="filmstrip-item">
+            <div class="fake-poster" onclick="loadYoutube(this, 'ID_3')">
+                <img src="{{ 'assets/images/poster-bts.jpg'|theme }}" alt="BTS">
+            </div>
+        </div>
+
+    </div>
+
+    <button class="filmstrip-arrow next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+</div>
+</div>
+                       
                     </div>
                 </div>
             </div>
